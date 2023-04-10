@@ -4,24 +4,26 @@ import App from './App'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home'
-import About from './components/About';
+
 import Books from './components/Books';
 import BookDetails from './components/BookDetails'
 import LoadingSpinner from './components/LoadingSpinner'
 import ErrorPage from './components/ErrorPage'
+import Blog from './components/Blog'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,  
     children: [
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('datas.json'),
       },
       {
-        path: 'books',
+        path: 'statistcs',
         element: <Books />,
         loader: () => fetch('https://api.itbook.store/1.0/new'),
       },
@@ -32,14 +34,15 @@ const router = createBrowserRouter([
       },
 
       {
-        path: 'about',
-        element: <About></About>,
+        path: 'blog',
+        element: <Blog></Blog>
+
       },
 
-      {
-        path: 'loader',
-        element: <LoadingSpinner></LoadingSpinner>
-      },
+      // {
+      //   path: 'loader',
+      //   element: <LoadingSpinner></LoadingSpinner>
+      // },
     ],
   },
 ])

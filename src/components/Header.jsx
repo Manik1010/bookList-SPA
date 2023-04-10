@@ -4,7 +4,7 @@ import {
   BoltIcon,
   Bars3BottomRightIcon,
   XMarkIcon,
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/solid' 
 
 const Header = () => {
 
@@ -15,44 +15,55 @@ const Header = () => {
     <div className='bg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
       <div className='relative flex items-center justify-between'>
 
-        {/* Logo Section */}
-        <Link to='/' className='inline-flex items-center'>
-          <BoltIcon className='h-6 w-6 text-blue-500' />
+        <div>
           <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>
-            nextPage
+            JobHub
           </span>
-        </Link>
+        </div>
 
-        {/* Nav Items Section */}
-        <ul className='items-center hidden space-x-8 lg:flex'>
-          <li>
-            <NavLink
-              to='/'
-              // className={({ isActive }) => (isActive ? 'active' : 'default')}
-              className={({ isActive }) => (isActive ? 'text-blue-600' : 'default')}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to='/books'
-              className={({ isActive }) => (isActive ? 'active' : 'default')}
-            >
-              Books
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to='/about'
-              className={({ isActive }) => (isActive ? 'active' : 'default')}
+        <div>
+          {/* Nav Items Section */}
+          <ul className='items-center hidden space-x-8 lg:flex'>
+            <li>
+              <NavLink
+                to='/'
+                className={({ isActive }) => (isActive ? 'text-blue-600' : 'default')}
+              >
+                Home
+              </NavLink> 
+            </li>
+            <li>
+              <NavLink
+                to='/statistcs'
+                // className={({ isActive }) => (isActive ? 'active' : 'default')}
+                className={({ isActive }) => (isActive ? 'text-blue-600' : 'default')}
+              >
+                Statistcs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/jobs'
+                className={({ isActive }) => (isActive ? 'active' : 'default')}
+              >
+                Applied Job
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/blog'
+                className={({ isActive }) => (isActive ? 'active' : 'default')}
               // className={({ isActive }) => (isActive ? 'text-blue-600' : 'default')}
-            >
-              About us
-            </NavLink>
-          </li>
-        </ul>
-        
+              >
+                Blog
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button>Add</button>
+        </div>
+
         {/* Mobile Navbar Section */}
         <div className='lg:hidden'>
           {/* Dropdown Open Button */}
@@ -69,12 +80,15 @@ const Header = () => {
                 {/* Logo & Button section */}
                 <div className='flex items-center justify-between mb-4'>
                   <div>
-                    <Link to='/' className='inline-flex items-center'>
+                    {/* <Link to='/' className='inline-flex items-center'>
                       <BoltIcon className='h-6 w-6 text-blue-500' />
                       <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                        nextPage
+                      JobHub
                       </span>
-                    </Link>
+                    </Link> */}
+                    <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>
+                      JobHub
+                    </span>
                   </div>
                   {/* Dropdown menu close button */}
                   <div>
@@ -97,10 +111,18 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to='/books'
+                        to='/statistcs'
                         className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
                       >
-                        Books
+                        Statistcs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/jobs'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
+                      >
+                        Applied Job
                       </Link>
                     </li>
                     <li>
@@ -108,12 +130,14 @@ const Header = () => {
                         to='/about'
                         className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
                       >
-                        About Us
+                        Blog
                       </Link>
                     </li>
                   </ul>
                 </nav>
+                <button>Add</button>
               </div>
+              {/* <button>Add</button> */}
             </div>
           )}
         </div>
